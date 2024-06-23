@@ -10,9 +10,17 @@ namespace PennyPrudence.Domain.Models
     {
         public string? Name { get; set; }
 
-        public IEnumerable<CreditCardStatement>? CreditCardStatements { get; set; }
+        public BankEntity Bank { get; set; }
 
-        public IEnumerable<PaymentPlan>? PaymentPlans { get; set; }
+        public List<CreditCardStatement>? CreditCardStatements { get; set; } = [];
+
+        public List<PaymentPlan>? PaymentPlans { get; set; } = [];
+
+
+        public List<FixedCardExpense>? FixedCardsExpenses { get; set; } = [];
+
+        public CreditCardStatement? GetLastStatement => CreditCardStatements?.OrderByDescending(n => n.DueDate).FirstOrDefault();
+
 
     }
 }

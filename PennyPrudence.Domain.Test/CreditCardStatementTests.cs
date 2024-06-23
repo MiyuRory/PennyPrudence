@@ -12,9 +12,9 @@ namespace PennyPrudence.Domain.Test
         {
             //arrange
             var myStatement = new CreditCardStatement() { Installments = new List<Installment>() };
-            myStatement.Installments.Add(new Installment { Amount = a });
-            myStatement.Installments.Add(new Installment { Amount = b });
-            myStatement.Installments.Add(new Installment { Amount = c });
+            myStatement.Installments.Add(new Installment { Amount = a, AppearsInStatement = true });
+            myStatement.Installments.Add(new Installment { Amount = b, AppearsInStatement = true });
+            myStatement.Installments.Add(new Installment { Amount = c, AppearsInStatement = true });
             //act
 
             //assert
@@ -29,9 +29,9 @@ namespace PennyPrudence.Domain.Test
             //arrange
 
             var myStatement = new CreditCardStatement() { Installments = new List<Installment>() };
-            myStatement.Installments.Add(new Installment { Amount = a });
-            myStatement.Installments.Add(new Installment { Amount = b });
-            myStatement.Installments.Add(new Installment { Amount = c });
+            myStatement.Installments.Add(new Installment { Amount = a, AppearsInStatement = true });
+            myStatement.Installments.Add(new Installment { Amount = b, AppearsInStatement = true });
+            myStatement.Installments.Add(new Installment { Amount = c, AppearsInStatement = true });
             myStatement.Total = 20;
             //act
 
